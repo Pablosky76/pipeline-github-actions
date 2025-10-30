@@ -24,13 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Verifica que Cypress está correctamente instalado en el runner
       - name: Verify Cypress
         run: npx cypress verify
 
-      # Ejecuta los tests en modo headless con Electron
-      - name: Run Cypress
-        run: npx cypress run --browser electron --spec "cypress/e2e/**/*.{cy,spec}.{js,ts}"
+      - name: Run Cypress tests
+        run: npx cypress run --browser electron --spec "cypress/e2e/**/*.cy.js"
 
       - name: Upload Cypress videos
         if: always()

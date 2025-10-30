@@ -28,7 +28,7 @@ jobs:
         run: npx cypress verify
 
       - name: Run Cypress tests
-        run: npx cypress run --browser electron --spec "cypress/e2e/**/*.cy.js"
+        run: npx cypress run --browser electron --spec "./cypress/e2e/**/*.cy.js" --project .
 
       - name: Upload Cypress videos
         if: always()

@@ -27,8 +27,18 @@ jobs:
       - name: Verify Cypress
         run: npx cypress verify
 
+      - name: Debug list repo files
+        run: |
+          echo "PWD:" && pwd
+          echo ""
+          echo "Git tracked files (first 200):"
+          git ls-files | sed -n '1,200p'
+          echo ""
+          echo "JS specs found:"
+          find . -type f -name "*.cy.js" -print
+
       - name: Run Cypress tests
-        run: npx cypress run --browser electron --spec "./cypress/e2e/**/*.cy.js" --project .
+        run: npx cypress run --browser electron --spec "cypress/**/*.cy.{js,ts}"
 
       - name: Upload Cypress videos
         if: always()

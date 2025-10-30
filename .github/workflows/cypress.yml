@@ -38,7 +38,11 @@ jobs:
           find . -type f -name "*.cy.js" -print
 
       - name: Run Cypress tests
-        run: npx cypress run --browser electron --spec "cypress/**/*.cy.{js,ts}"
+        working-directory: ${{ github.workspace }}
+        run: |
+          echo "PWD:" && pwd
+          echo "Listado rápido:" && ls -la
+          npx cypress run --browser electron --spec "cypress/e2e/spec.cy.js,cypress/e2e/smoke.cy.js"
 
       - name: Upload Cypress videos
         if: always()

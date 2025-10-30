@@ -42,7 +42,7 @@ jobs:
         run: |
           echo "PWD:" && pwd
           echo "Listado rápido:" && ls -la
-          npx cypress run --browser electron --spec "cypress/e2e/spec.cy.js,cypress/e2e/smoke.cy.js"
+          npm run test:cypress
 
       - name: Upload Cypress videos
         if: always()

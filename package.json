@@ -1,24 +1,13 @@
 {
-  "name": "pipeline-github-actions",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:cypress": "cypress run --browser electron"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Pablosky76/pipeline-github-actions.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Pablosky76/pipeline-github-actions/issues"
-  },
-  "homepage": "https://github.com/Pablosky76/pipeline-github-actions#readme",
   "devDependencies": {
-    "cypress": "^15.5.0"
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
+    "@cucumber/cucumber": "^12.2.0",
+    "crypto-browserify": "^3.12.1",
+    "cypress": "^12.17.4",
+    "process": "^0.11.10"
   }
 }
